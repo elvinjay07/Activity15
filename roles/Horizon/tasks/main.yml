@@ -1,0 +1,15 @@
+- name: Installing Horizon
+  apt:
+    name:
+      - openstack-dashboard
+    state: present
+    update_cache: yes
+
+- name: Install Apache2
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+
+- name: Restart Apache2
+  shell: sudo systemctl reload apache2.service
